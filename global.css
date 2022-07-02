@@ -1,0 +1,83 @@
+#pin {
+	border-top: dotted 2px #bbb;
+}
+
+body, html {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+
+	font-size: 10pt;
+}
+
+#bar {
+	width: 100%;
+	position: fixed;
+
+	z-index: 10;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+hr {
+	border-top: 1px solid #ddd;
+}
+
+.table {
+	display: table;
+	border-spacing: 1px;
+}
+
+.td {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.tr {
+	display: table-row;
+}
+
+.table input {
+	float: left;
+}
+
+#pt2 input {
+	width: 80%;
+}
+
+textarea {
+	width: 310px;
+	height: 100px;
+}
+
+hr {
+	margin: 3px;
+}
+
+#thread .post {
+    height: auto;
+    max-width: 900px;
+    width: fit-content;
+
+    display: table;
+
+    margin-top: 0px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    margin-left: 16px;
+}
+
+.indent {
+  margin-left: 20px;
+}
+
+@media only screen and (max-device-width: 900px) {
+  #thread .post {
+    width: 90%;
+    margin-left: 10px;
+  }
+  .indent {
+    margin-left: 0px;
+  }
+}
+
