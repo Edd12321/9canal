@@ -1,0 +1,100 @@
+body, html {
+    background-color: #eee;
+}
+
+b {
+    font-family: arial, helvetica, sans-serif;
+}
+
+#bar {
+    background-size: 8.49px 8.49px;
+    background-color: #ddd;
+    color: #111;
+    padding: 3px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #bbb;
+}
+a {
+    color: #f60;
+}
+textarea:focus, input[type=text]:focus, select:focus {
+  outline: 0.1px solid #f67;
+  transition: ease-in-out, background-color .20s ease-in-out;
+}
+textarea:disabled input[type=text]:disabled {
+  background-color: gray;
+}
+
+.cont {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+}
+
+#thread {
+ /* display: inline-block; */
+    position: absolute;
+    padding: 5px;
+    width: 100%;
+    clear: both;
+}
+h2 {
+    font-size: 19pt;
+
+    letter-spacing: -1.5px;
+    font-weight: 400;
+
+    color: #004a99;
+    text-shadow: 1px 1px 1px rgb(0 74 153 / 60%);
+}
+
+hr {
+  border-top: 1px solid #ddd;
+}
+
+#pt1 {
+    font-family: serif;
+    background-color: #ddd;
+    width: 90px;
+
+    border: 1px solid #ccc;
+}
+
+span {
+  color: #000;
+}
+
+span.name {
+  color: #004a99;
+  font-weight: 700;
+}
+
+span.subject {
+  color: #000;
+  font-weight: 700;
+}
+
+span.tripcode {
+  font-size: 0.75em;
+}
+
+span.capcode {
+  font-weight: 700;
+  color: orange;
+}
+
+.post {
+  color: #333;
+
+  word-break: break-word;
+  position: relative;
+
+  padding: 7px 10px 0px 15px;
+
+  background-color: #ddd;
+  font-family: sans-serif;
+  border: 1px solid #ccc;
+
+  border-radius: 2px;
+}
