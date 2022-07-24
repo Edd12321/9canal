@@ -12,7 +12,7 @@ b {
     color: #111;
     padding: 3px;
     border-bottom: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #bbb;
+    box-shadow: -5px 1px 10px #bbb;
 }
 a {
     color: #f60;
