@@ -9,13 +9,25 @@ include realpath(__DIR__).'/config.php';
 
 header("Cache-Control: no cache");
 session_cache_limiter("private_no_expire");
+$board = basename(getcwd());
+
+
+# In cazul in care suntem in afara unui board ...
+if ($board == basename($root)) {
+##header("Location:/all/");
+  session_destroy();
+  header('HTTP/1.1 301 Moved Permanently');
+  header("Location: $fakeroot/all/");
+  
+  exit(0);	
+}
+
 ?>
 
 <html>
     <head>
 <?php
 setlocale(LC_ALL, "ro_RO");
-$board = basename(getcwd());
 
  ####################
  # Postare in /vip/ #

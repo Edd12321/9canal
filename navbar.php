@@ -1,11 +1,11 @@
 <div id="bar">
     <i><b><font color="#bcaf4f">9</font>canal</b></i>
     &ensp;
-    [
-      <b><a href=<?php echo "$fakeroot/all/";?>>all</a></b>
-       /
-      <b><a href=<?php echo "$fakeroot/rss/"; ?> style="color:orange;">rss</a></b>
-    ][
+	[
+<b><a href=<?php echo "$fakeroot/all/";?>>all</a></b>
+	/
+<b><a href=<?php echo "$fakeroot/rss/"; ?> style="color:orange;">rss</a></b>
+	][
 <?php
 
 ## Declaram variabila path:
@@ -43,16 +43,16 @@ foreach($files as $file) {
   ++$i;
   if (is_dir($path.'/'.$file)) {
     if (!in_array($file, $nepermis)) {
-      echo '<a href="'.$fakeroot.'/'.$file.'/">'.$file.'</a>&nbsp;';
+      echo '<a href="'.$fakeroot.'/'.$file.'/">&nbsp;'.$file.'</a>';
       if ($i != $fsize)
-        echo '/&nbsp';
-    }
+		echo '&nbsp;/';
+	}
   }
 }
 
 ?>
 
 	][
-<a href=<?="$fakeroot/rules.txt"?>>rules</a>
+<a href=<?="$fakeroot/rules.txt"?>> rules </a>
 	]
 </div>

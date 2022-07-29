@@ -14,9 +14,16 @@ body, html {
 	width: 100%;
 	position: fixed;
 
+	font-size: 12px;
 	z-index: 10;
 	overflow-x: auto;
 	white-space: nowrap;
+
+	letter-spacing: -0.1px;
+}
+
+#bar a {
+	text-decoration: none;
 }
 
 hr {
