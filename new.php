@@ -96,16 +96,17 @@ if (is_numeric($board)) {
   $titlek .= "/..";
 }
 $title = '/'.basename(realpath($titlek)).'/ - '.file_get_contents($titlek."/title.txt");
-echo '<h2>'.
-        $title.
-     '</h2>
-      <title>'.
-        $title.
-     '</title>';
+echo "<h2 id=\"btitle\">$title</h2>";
+echo "<title>$title</title>";
 ?>
 
+  <script src="<?=$fakeroot?>/reveal.js"></script>
+  <div id="post-dp">
+    <h2>[<a href='#' id="post-button" onclick="modifyDiv('post-menu', 'post-dp')">Postare nouă</a>]</h2>
+  </div>
+
   <!-- SECTIUNE TABEL -->
-  <div class="table">
+  <div class="table" style="display: none;" id="post-menu">
     <form method="post">
        <div class="tr">
          <div class="td" id="pt1">
@@ -205,7 +206,7 @@ noBall:
       <div class="td" id="pt1">
         <label for="content">
            <b>
-             Continut
+             Conținut
            </b>
         </label>
       </div>

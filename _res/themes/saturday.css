@@ -47,7 +47,7 @@ textarea:disabled input[type=text]:disabled {
     width: 100%;
     clear: both;
 }
-h2 {
+#btitle {
     font-size: 19pt;
 
     letter-spacing: -1.5px;

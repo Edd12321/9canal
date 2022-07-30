@@ -66,9 +66,11 @@ hr {
     max-width: 900px;
     width: fit-content;
 
+	padding: 0;
+	padding-top:1;
     display: table;
 
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 3px;
     margin-right: 5px;
     margin-left: 16px;

@@ -74,7 +74,7 @@ function display_post($file, $fakeroot, $k) {
     $icon = '';
 
     $imple = 0;
-    
+
     if (is_file($file)) {
       if (file_exists(dirname($file)."/../ISROOT")) {
         #Este o postare simpla, nu un thread.
@@ -180,13 +180,20 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
       <hr />
       <script src="<?=$fakeroot?>/theme.js"></script>
 
+
       <form action="" method="post">
-        <select id="theme" onchange="whichTheme();" style="font-size: 15px;">
+		<select id="theme" onchange="this.form.submit();whichTheme();" style="font-size: 15px;">
         <?php 
             $themes = scandir("$root/_res/themes");
             $themes = array_splice($themes, 2);
+
+             ###################
+			 ## Tema curenta! ##
+             ###################
+            echo '<option value="'.$_COOKIE["theme"].'">Tema '.basename($_COOKIE["theme"], ".css").'</option>';
+            
             foreach ($themes as $theme) {
-              echo '<option value="'.$theme.'">Tema '.basename($theme, ".css").'</option>';
+              if ($theme != $_COOKIE["theme"]) echo '<option value="'.$theme.'">Tema '.basename($theme, ".css").'</option>';
             }
          ?>
         </select>

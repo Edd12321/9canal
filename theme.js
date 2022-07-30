@@ -1,14 +1,18 @@
 // set cookie
-function setCookie(name, value, days) {
+function
+setCookie(name, value, days)
+{
 	let day = new Date();
 	day.setDate(day.getDate() + days);
 
 	let finalv = escape(value) + ((days == null) ? "" : "; expires=" + day.toUTCString());
-	document.cookie = name + '=' + finalv;
+	document.cookie = name + '=' + finalv + "; Path=/";
 }
 
 // get cookie
-function getCookie(name) {
+function
+getCookie(name)
+{
 	let cookies = document.cookie.split(';');
 	let oo = cookies.length;
 
@@ -23,8 +27,18 @@ function getCookie(name) {
 	}
 }
 
+// delete cookie
+function
+deleteCookie(name)
+{
+	document.cookie = name +"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+
 // set theme
-function whichTheme() {
+function
+whichTheme()
+{
 	var theme = document.getElementById("theme").value;
+	deleteCookie(theme);
 	setCookie("theme", theme, 9999);
 }

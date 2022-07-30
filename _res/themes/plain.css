@@ -1,5 +1,6 @@
 body, html {
-    background-color: #eee;
+    background-color: #e0e1e8;
+	background-repeat: no-repeat;
 }
 
 b {
@@ -9,13 +10,13 @@ b {
 #bar {
     background-size: 8.49px 8.49px;
     background-color: #ddd;
-    color: #111;
+    color: #000;
     padding: 3px;
     border-bottom: 1px solid #ccc;
     box-shadow: -5px 1px 10px #bbb;
 }
 a {
-    color: #f60;
+    color: #34345c;
 }
 textarea:focus, input[type=text]:focus, select:focus {
   outline: 0.1px solid #f67;
@@ -41,12 +42,10 @@ textarea:disabled input[type=text]:disabled {
 }
 #btitle {
     font-size: 19pt;
+    font-family: serif;
 
     letter-spacing: -1.5px;
-    font-weight: 400;
-
-    color: #004a99;
-    text-shadow: 1px 1px 1px rgb(0 74 153 / 60%);
+    font-weight: bold;
 }
 
 hr {
@@ -55,19 +54,17 @@ hr {
 
 #pt1 {
     font-family: serif;
-    background-color: #ddd;
+    background-color: #b7c5d2;
     width: 90px;
 
-    border: 1px solid #ccc;
-}
-
-span {
-  color: #000;
+    border: 1.5px solid #cdcdce;
 }
 
 span.name {
-  color: #004a99;
+  color: orange;
   font-weight: 700;
+
+  text-shadow: 1px 1px 1px black;
 }
 
 span.subject {
@@ -77,11 +74,13 @@ span.subject {
 
 span.tripcode {
   font-size: 0.75em;
+  text-shadow: 1px 1px 1px black;
 }
 
 span.capcode {
   font-weight: 700;
   color: orange;
+  text-shadow: 1px 1px 1px black;
 }
 
 .post {
@@ -92,9 +91,15 @@ span.capcode {
 
   padding: 7px 10px 0px 15px;
 
-  background-color: #ddd;
+  background-color: #ecedf3;
   font-family: sans-serif;
-  border: 1px solid #ccc;
 
-  border-radius: 2px;
+  border: 2px solid #ccc;
+}
+
+.postinfo {
+  background-image: linear-gradient(to bottom, #355d80, #88a6c0);
+  padding: 3px;
+
+  color: white;
 }

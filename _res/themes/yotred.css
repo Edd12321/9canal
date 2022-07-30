@@ -1,5 +1,6 @@
 body, html {
-    background-color: #eee;
+    background-color: #ffffee;
+    color: maroon;
 }
 
 b {
@@ -8,19 +9,20 @@ b {
 
 #bar {
     background-size: 8.49px 8.49px;
-    background-color: #ddd;
-    color: #111;
+    background-color: rgba(240,224,214,0.98);
+	color: #b86;
     padding: 3px;
     border-bottom: 1px solid #ccc;
     box-shadow: -5px 1px 10px #bbb;
 }
+#bar a {
+    color: #800000;
+	font-weight: 700;
+}
 a {
-    color: #f60;
+    color: #34345c;
 }
-textarea:focus, input[type=text]:focus, select:focus {
-  outline: 0.1px solid #f67;
-  transition: ease-in-out, background-color .20s ease-in-out;
-}
+
 textarea:disabled input[type=text]:disabled {
   background-color: gray;
 }
@@ -45,8 +47,8 @@ textarea:disabled input[type=text]:disabled {
     letter-spacing: -1.5px;
     font-weight: 400;
 
-    color: #004a99;
-    text-shadow: 1px 1px 1px rgb(0 74 153 / 60%);
+    color: #af0a0f;
+    text-shadow: 1px 1px 1px rgb(105 10 15 / 60%);
 }
 
 hr {
@@ -55,10 +57,10 @@ hr {
 
 #pt1 {
     font-family: serif;
-    background-color: #ddd;
+    background-color: #ea8;
     width: 90px;
 
-    border: 1px solid #ccc;
+    border: 1.5px solid black;
 }
 
 span {
@@ -66,12 +68,12 @@ span {
 }
 
 span.name {
-  color: #004a99;
+  color: #117743;
   font-weight: 700;
 }
 
 span.subject {
-  color: #000;
+  color: #cc1105;
   font-weight: 700;
 }
 
@@ -81,20 +83,18 @@ span.tripcode {
 
 span.capcode {
   font-weight: 700;
-  color: orange;
+  color: #cc1105!important;
 }
 
 .post {
-  color: #333;
-
   word-break: break-word;
   position: relative;
 
   padding: 7px 10px 0px 15px;
 
-  background-color: #ddd;
+  background-color: #f0e0d6;
   font-family: sans-serif;
-  border: 1px solid #ccc;
 
-  border-radius: 2px;
+  border-right:  1px solid #d9bfb7;
+  border-bottom: 1px solid #d9bfb7;
 }
