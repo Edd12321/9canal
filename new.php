@@ -99,8 +99,6 @@ $title = '/'.basename(realpath($titlek)).'/ - '.file_get_contents($titlek."/titl
 echo "<h2 id=\"btitle\">$title</h2>";
 echo "<title>$title</title>";
 ?>
-
-  <script src="<?=$fakeroot?>/reveal.js"></script>
   <div id="post-dp">
     <h2>[<a href='#' id="post-button" onclick="modifyDiv('post-menu', 'post-dp')">Postare nouă</a>]</h2>
   </div>
@@ -267,11 +265,11 @@ if ($nlh) {
 </center>
 
 <div style="width:467px;height:fit-content;margin-left:auto;margin-right:auto;">
+<div id="blot-open">
 <?php
    ######################################
    # AICI SE FACE AFISAREA BLOTTER-ULUI #
    ######################################
-  if ($blotter != '1') {
 	#Afisam buton blotter.
     echo '<font size="2px">';
     $k = 0;
@@ -305,13 +303,14 @@ label:
     #Butoanele [inchide] & [blotter]:
     echo '</font>
     <div style="text-align:right;">
-      [<a href="index.php?b=1">inchide</a>]
+      [<a href="#" onclick="modifyDiv(\'blot-close\', \'blot-open\')">inchide</a>]
       [<a href="'.$fakeroot.'/blotter.php">blotter</a>]
     </div>';
-  } else {
-    echo '<div style="text-align:right;">
-      [<a href="index.php">deschide</a>]
-     </div>';
-  }
-  ?>
-  </div>
+ ?>
+</div>
+<div id="blot-close" style="display:none">
+<?php
+	echo '<div style="text-align:right;">[<a href="#" onclick="modifyDiv(\'blot-open\', \'blot-close\')">deschide</a>]</div>';
+ ?>
+</div>
+</div>

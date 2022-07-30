@@ -15,11 +15,11 @@ getCookie(name)
 {
 	let cookies = document.cookie.split(';');
 	let oo = cookies.length;
-
-	for (let i = 0; i < cookies; ++i) {
+	
+	for (let i = 0; i < oo; ++i) {
 		let a = cookies[i].substr(0, cookies[i].indexOf("="));
 		let b = cookies[i].substr(cookies[i].indexOf("=") + 1);
-
+		
 		a = a.replce(/^\s+|\s+$/g, "");
 		if (a == name) {
 			return unescape(b);

@@ -178,9 +178,6 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
 }
 ?>
       <hr />
-      <script src="<?=$fakeroot?>/theme.js"></script>
-
-
       <form action="" method="post">
 		<select id="theme" onchange="this.form.submit();whichTheme();" style="font-size: 15px;">
         <?php 

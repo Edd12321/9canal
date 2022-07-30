@@ -19,13 +19,19 @@ if ($board == basename($root)) {
   header('HTTP/1.1 301 Moved Permanently');
   header("Location: $fakeroot/all/");
   
-  exit(0);	
+  exit(0);  
 }
 
 ?>
 
 <html>
-    <head>
+<head>
+
+<!-----BEGIN JAVASCRIPT----->
+<script src="<?=$fakeroot?>/reveal.js"></script>
+<script src="<?=$fakeroot?>/theme.js"></script>
+<!-----END JAVASCRIPT----->
+
 <?php
 setlocale(LC_ALL, "ro_RO");
 
@@ -153,8 +159,8 @@ if (isset($_GET['b'])) {
                user-scalable=no,
                user-scrollable=no,
                minimal-ui">
-  </head>
-  <body>
+</head>
+<body>
   <?php
       ####################
       # BARA DE NAVIGARE #
@@ -172,11 +178,10 @@ if (isset($_GET['b'])) {
       require "posts.php";
      ?>
   </center>
-  </div>
-	  <script>
-if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
-	  </script>
-  </body>
+  <script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+  </script>
+</body>
 </html>
