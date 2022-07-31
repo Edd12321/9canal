@@ -1,12 +1,12 @@
 // set cookie
 function
-setCookie(name, value, days)
+setCookie(name, value, days, root)
 {
 	let day = new Date();
 	day.setDate(day.getDate() + days);
 
 	let finalv = escape(value) + ((days == null) ? "" : "; expires=" + day.toUTCString());
-	document.cookie = name + '=' + finalv + "; Path=/";
+	document.cookie = name + '=' + finalv + "; Path="+root;
 }
 
 // get cookie
@@ -29,16 +29,16 @@ getCookie(name)
 
 // delete cookie
 function
-deleteCookie(name)
+deleteCookie(name, root)
 {
-	document.cookie = name +"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+	document.cookie = name +"=; Path="+root+"; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
 // set theme
 function
-whichTheme()
+whichTheme(root)
 {
 	var theme = document.getElementById("theme").value;
-	deleteCookie(theme);
-	setCookie("theme", theme, 9999);
+	deleteCookie(theme, root);
+	setCookie("theme", theme, 9999, root);
 }

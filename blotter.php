@@ -14,10 +14,11 @@ include_once 'config.php';
 		   minimal-ui">
       <style>
         table {
-	  width: 95%;
-	}
+          width: 95%;
+        }
         td {
-          background-color: white;
+	   /* background-color: white; */
+          border: 1px solid #ccc;
         }
       </style>
     </head>

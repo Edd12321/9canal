@@ -1,5 +1,11 @@
 # 9canal
-Forum anonim cu sistem de board-uri
+Forum anonim cu sistem de board-uri, teme, bump-uri, parole temporare, banner-uri, blotter, etc.
+
+# Screenshot-uri
+![screen1](_res/img/forum-1.png)
+![screen2](_res/img/forum-2.png)
+![screen3](_res/img/forum-3.png)
+![screen4](_res/img/forum-4.png)
 
 # Configurare
 `$ mkdir all`

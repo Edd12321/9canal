@@ -178,9 +178,9 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
 }
 ?>
       <hr />
-      <form action="" method="post">
-		<select id="theme" onchange="this.form.submit();whichTheme();" style="font-size: 15px;">
-        <?php 
+	  <form action="" method="post">
+      <select id="theme" onchange="this.form.submit();whichTheme('<?=$fakeroot?>');" style="font-size: 15px;">
+        <?php
             $themes = scandir("$root/_res/themes");
             $themes = array_splice($themes, 2);
 
