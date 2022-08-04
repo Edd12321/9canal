@@ -5,9 +5,9 @@ $nlh = !is_localhost();
 # Conditii ca postarea sa fie trimisa. #
 ########################################
 
-$trimite = $_POST["submit"];
-$id_fals = (strpos($_POST["trip"], '!'));
-$captcha = ($_SESSION["solve"] == $_POST["ver"]);
+$trimite = @$_POST["submit"];
+$id_fals = (strpos(@$_POST["trip"], '!'));
+$captcha = ($_SESSION["solve"] == @$_POST["ver"]);
 
 if (isset($trimite)
 && (($nlh && $board != "vip" && $captcha) || !$nlh)

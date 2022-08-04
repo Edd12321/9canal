@@ -10,7 +10,7 @@ $lines = random_int(3, 9);
 if (!isset($_SESSION["solve"])) {
     $chars = 'QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm1234567890';
     for ($i = 0; $i < 6; ++$i) {
-        $_SESSION["solve"] .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
+        @$_SESSION["solve"] .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
     }
 }
 $image = new Imagick();

@@ -18,7 +18,7 @@ function display_post($file, $fakeroot, $k) {
     $lines = file($access);
 
     #Extragem datele stocate despre postare din fisierul sau.
-    $rest = implode('\n', array_splice($lines, 4));
+    $rest = implode('\n', @array_splice($lines, 4));
     $info = $lines;
 
     ## NUME
@@ -187,10 +187,10 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
              ###################
 			 ## Tema curenta! ##
              ###################
-            echo '<option value="'.$_COOKIE["theme"].'">Tema '.basename($_COOKIE["theme"], ".css").'</option>';
+            echo '<option value="'.@$_COOKIE["theme"].'">Tema '.basename(@$_COOKIE["theme"], ".css").'</option>';
             
             foreach ($themes as $theme) {
-              if ($theme != $_COOKIE["theme"]) echo '<option value="'.$theme.'">Tema '.basename($theme, ".css").'</option>';
+              if ($theme != @$_COOKIE["theme"]) echo '<option value="'.$theme.'">Tema '.basename($theme, ".css").'</option>';
             }
          ?>
         </select>
@@ -207,7 +207,7 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
   echo '<div id="thread">';
 
   $files = scandir('.');
-  if ($_POST["view_order"] == "time") {
+  if (@$_POST["view_order"] == "time") {
     natsort($files);	
   } else {
     #Sortam vectorul

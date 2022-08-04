@@ -8,7 +8,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include realpath(__DIR__).'/config.php';
 
 header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
+@session_cache_limiter("private_no_expire");
 $board = basename(getcwd());
 
 
