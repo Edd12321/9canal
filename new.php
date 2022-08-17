@@ -31,6 +31,15 @@ if (isset($trimite)
     #ID
     $number = file_get_contents(realpath(__DIR__).'/postnum.txt') + 1;
 
+    #Daca optiunea e selectata, se logheaza IP pt ban.
+    if ($log_post) {
+      $ip_addr = $_SERVER["REMOTE_ADDR"];
+      
+      $ip_path = new SplFileObject("$root/_admin/ip_log.csv", "a");
+      $ip_path->fputcsv([@$ip_addr, @$number]);
+      $ip_path = null;
+    }
+
     #Countryball (/int/, /pol/)
     $flag = '';
     if (isset($_POST['cball'])) {
@@ -99,12 +108,34 @@ $title = '/'.basename(realpath($titlek)).'/ - '.file_get_contents($titlek."/titl
 echo "<h2 id=\"btitle\">$title</h2>";
 echo "<title>$title</title>";
 ?>
+
+  <!---js-->
+    <style>
+      #post-menu {
+        display: none;
+	  }
+      #post-dp {
+        display: block;
+	  }
+    </style>
+  <!--/js-->
+  <noscript>
+	<style>
+      #post-menu {
+        display: block;
+      }
+      #post-dp {
+        display: none;
+      }
+    </style>
+  </noscript>
+
   <div id="post-dp">
     <h2>[<a href='#' id="post-button" onclick="modifyDiv('post-menu', 'post-dp')">Postare nouă</a>]</h2>
   </div>
 
   <!-- SECTIUNE TABEL -->
-  <div class="table" style="display: none;" id="post-menu">
+  <div class="table" id="post-menu">
     <form method="post">
        <div class="tr">
          <div class="td" id="pt1">
@@ -258,8 +289,9 @@ if ($nlh) {
           >Trimite!</button>
           </div>
         </div>
-      </form>
-    </div>
+	  </form>
+      Cititi <a href=<?=$fakeroot?>/rules.txt>regulile</a> inaine de a posta!</a>
+	</div>
   </div>
   <hr width="468px" />
 </center>

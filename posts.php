@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  require 'bbcode.php';
+session_start();
+require 'bbcode.php';
 
 function display_post($file, $fakeroot, $k) {
    ##################################
@@ -35,8 +35,8 @@ function display_post($file, $fakeroot, $k) {
 
       if (strpos($name, "!!") !== false) {
         #tripcode securizat
-	$trips = explode("!!", $name);
-	$trip = "!!";
+        $trips = explode("!!", $name);
+        $trip = "!!";
       } else {
         #tripcode normal
         $trips = explode('!', $name);
@@ -78,7 +78,7 @@ function display_post($file, $fakeroot, $k) {
     if (is_file($file)) {
       if (file_exists(dirname($file)."/../ISROOT")) {
         #Este o postare simpla, nu un thread.
-        $imple = 1;	    
+        $imple = 1;         
         $icon .= "<img src=\"$fakeroot/_res/closed.gif \" />";
       } else {
         $icon .= "▶";
@@ -107,7 +107,7 @@ echo '
       <span class="deletespan">
         <span class="delete">
           <input type="checkbox" name="'.$id.'" value="delete">
-	</span>
+        </span>
       </span>
       <span class="subjectspan">
         <span class="subject">'.$subject.'</span>
@@ -133,8 +133,11 @@ echo '
     if (!ctype_space($img)) {
         echo "<img src=\"".htmlspecialchars($img)."\" />";
     }
-echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
-   '</blockquote>';
+	echo bbcode_fmt(
+		 nl3br(
+		 make_links_clickable(
+		 green($rest)))).
+   		'</blockquote>';
     $is_thread = is_dir($file);
 
     echo '</div>';
@@ -147,26 +150,26 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
 
       $replies = count(scandir($file)) - 4;
       if ($replies) {
-	$preview = array();
+        $preview = array();
 
-	#Fisiere cu reply-uri
-	$reply_arr = scandir($file);
+        #Fisiere cu reply-uri
+        $reply_arr = scandir($file);
         $reply_del = [ ".", "..", "$file.txt", "index.php" ];
 
         $reply_arr = array_values(array_diff($reply_arr, $reply_del));
 
         $k = 0;
-	foreach ($reply_arr as $reply) {
-	  ++$k;
+        foreach ($reply_arr as $reply) {
+          ++$k;
           if ($k == 5) {
             break;
-	  }
+          }
           $preview[] = "$file/$reply";
         }
         foreach ($preview as $newfile) {
-	  display_post($newfile, $fakeroot, 1);
-	}
-	echo "[<a href=\"$file\">Vizualizare fir (+$replies)</a>]";
+          display_post($newfile, $fakeroot, 1);
+        }
+        echo "[<a href=\"$file\">Vizualizare fir (+$replies)</a>]";
       } else {
         echo "[<a href=\"$file\">Vizualizare fir</a>]";
       }
@@ -178,37 +181,43 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
 }
 ?>
       <hr />
-	  <form action="" method="post">
-      <select id="theme" onchange="this.form.submit();whichTheme('<?=$fakeroot?>');" style="font-size: 15px;">
+      <form action="" method="post">
+      <select name="theme" id="theme" onchange="this.form.submit();whichTheme('<?=$fakeroot?>');" style="font-size: 15px;">
         <?php
             $themes = scandir("$root/_res/themes");
             $themes = array_splice($themes, 2);
 
              ###################
-			 ## Tema curenta! ##
+             ## Tema curenta! ##
              ###################
-            echo '<option value="'.@$_COOKIE["theme"].'">Tema '.basename(@$_COOKIE["theme"], ".css").'</option>';
+            echo '<option value="'.@$_COOKIE["theme"].'">
+                    Tema '.basename(@$_COOKIE["theme"], ".css")
+                .'</option>';
             
             foreach ($themes as $theme) {
-              if ($theme != @$_COOKIE["theme"]) echo '<option value="'.$theme.'">Tema '.basename($theme, ".css").'</option>';
+              if ($theme != @$_COOKIE["theme"])
+                echo '<option value="'.$theme.'">
+                        Tema '.basename($theme, ".css")
+                    .'</option>';
             }
          ?>
         </select>
 
-	<select name="view_order" style="font-size: 15px;">
+        <select name="view_order" style="font-size: 15px;">
           <option value="bumped">Ordine bump</option>
           <option value="time">Ordine cronologica</option>
-	</select>
-        <button type="submit" class="button">OK</button>
-        <hr />
-      </form>
-<?php
+        </select>
+    <button type="submit" class="button">OK</button>
+    <hr />
+    </form>
 
+
+<?php
   echo '<div id="thread">';
 
   $files = scandir('.');
   if (@$_POST["view_order"] == "time") {
-    natsort($files);	
+    natsort($files);    
   } else {
     #Sortam vectorul
     usort($files, build_sorter('.'));
@@ -219,9 +228,9 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
   # 1 -> Vizualizam postarile din thread
   $k = 1;
   if (file_exists("../ISROOT")) {
-    $files = array_reverse($files);	
+    $files = array_reverse($files);     
     $k = 0;
-	
+        
     # Postarea fixata este mereu in varful board-ului.
 
     if (in_array("pin.txt", $files)) {
@@ -234,4 +243,4 @@ echo bbcode_fmt(nl3br(make_links_clickable(green($rest)))).
   foreach ($files as $file) {
     display_post($file, $fakeroot, $k);
   }
-?>
+ ?>

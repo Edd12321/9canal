@@ -12,10 +12,10 @@ include_once 'config.php';
                    user-scalable=no,
                    user-scrollable=no,
 		   minimal-ui">
-      <style>
-        table {
-          width: 95%;
-        }
+	  <style>
+        html, body { font-family: sans-serif; }
+        table      { width: 95%; }
+        #btitle    { font-size: 19pt; }
         td {
 	   /* background-color: white; */
           border: 1px solid #ccc;
@@ -25,7 +25,7 @@ include_once 'config.php';
     <body>
       <center>
         <br />
-        <h2>Blotter 9canal</h2>
+        <h2 id="btitle">Blotter 9canal</h2>
         <table>
           <tbody>
 <?php

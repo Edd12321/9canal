@@ -32,7 +32,8 @@ $fsize = count($files);
 $i = 0;
 
 # Foldere care nu sunt board-uri
-$nepermis = array("_res",
+$nepermis = array("_admin",
+	          "_res",
                   "all",
                   "rss",
                  ".git"
@@ -53,6 +54,7 @@ foreach($files as $file) {
 ?>
 
 	][
+<a href=<?="$fakeroot/_admin"   ?>> janitor </a>
 <a href=<?="$fakeroot/rules.txt"?>> rules </a>
 	]
 </div>

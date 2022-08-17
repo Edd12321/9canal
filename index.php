@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ini_set('display_errors', 0);
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
@@ -10,8 +9,24 @@ include realpath(__DIR__).'/config.php';
 header("Cache-Control: no cache");
 @session_cache_limiter("private_no_expire");
 $board = basename(getcwd());
+  
+?>
 
+<noscript>
+<?php
+if (isset($_POST["theme"])) {
+  setcookie(
+    name:               "theme",
+    value:              @$_POST["theme"],
+    expires_or_options: time()+60*60*24*9999,
+    path:               $fakeroot,
+    secure:             true
+  );
+}
+?>
+</noscript>
 
+<?php
 # In cazul in care suntem in afara unui board ...
 if ($board == basename($root)) {
 ##header("Location:/all/");
@@ -35,14 +50,9 @@ if ($board == basename($root)) {
 <?php
 setlocale(LC_ALL, "ro_RO");
 
- ####################
- # Postare in /vip/ #
- ####################
-function
-is_localhost($whitelist = ['127.0.0.1', '::1'])
-{
-  return in_array($_SERVER['REMOTE_ADDR'], $whitelist);
-}
+/***** BEGIN IMPORT FUNCTIONS *****/
+ require "$root/func.php";
+/*****   END IMPORT FUNCTIONS *****/
 
  #######################################
  # Functie care sa inlocuiasca nl2br() #
